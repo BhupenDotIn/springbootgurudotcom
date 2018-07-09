@@ -1,8 +1,7 @@
 package bhupen.in.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.omg.CORBA.Request;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by BhupendraKumar on 7/9/18.
@@ -17,5 +16,11 @@ public class RestEndpoints {
         return new Course(name,chapters);
 
 
+    }
+
+    @RequestMapping(method = RequestMethod.POST , value = "register/course")
+    public String postCourse(@RequestBody Course course){
+
+        return "We have successfully saved the course "+ course.getCourseName() + " having chapters " + course.getChapters();
     }
 }
