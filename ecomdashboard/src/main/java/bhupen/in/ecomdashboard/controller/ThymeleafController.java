@@ -15,7 +15,7 @@ public class ThymeleafController {
     @Autowired
     private DashboardService dashboardService;
 
-    @GetMapping("/")
+    @GetMapping("/dashboard")
     public String getDashDetail(Model model) {
 
         /**
@@ -29,7 +29,7 @@ public class ThymeleafController {
          */
 
         model.addAttribute("ei", dashboardService.getAllEmployee());
-        return "/index";
+        return "/dashboard";
     }
 
 }
